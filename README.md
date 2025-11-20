@@ -116,7 +116,6 @@ Below is the code used to create this reduced dataset.
 
 
 ## Conclusion
-(à remplir à la fin)
 
 ## Video / Audio Link
-(To be added later: YouTube link)
+
