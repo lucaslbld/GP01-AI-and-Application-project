@@ -49,9 +49,9 @@ However, using the full dataset was not necessary for our project. To build a mo
 
 Below is the code used to create this reduced dataset.
 
-import os
-import random
-from datasets import load_dataset
+    import os
+    import random
+    from datasets import load_dataset
 
     def main():
     print("Loading full dataset from Hugging Face...")
