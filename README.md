@@ -54,7 +54,6 @@ Below is the code used to create this reduced dataset.
     from datasets import load_dataset
 
     def main():
-    print("Loading full dataset from Hugging Face...")
     ds = load_dataset("Hemg/AI-Generated-vs-Real-Images-Datasets")
     train = ds["train"]
 
@@ -104,8 +103,7 @@ Below is the code used to create this reduced dataset.
             img = img.convert("RGB")
         img.save(f"dataset/Real/real_{i:04d}.jpg")
 
-    print("DONE. Reduced dataset saved in dataset/AI and dataset/Real.")
-
+   
     if __name__ == "__main__":
     main()
 
