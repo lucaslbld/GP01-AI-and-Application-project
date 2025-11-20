@@ -1,4 +1,45 @@
-# GP01-AI-and-Application-project
-This project aims to predict football match outcomes — win, draw, or loss — using historical match statistics and supervised machine learning techniques. The dataset used is the European Soccer Database (Hugo Mathien, Kaggle), which contains detailed data on over 25,000 matches from multiple European leagues between 2008 and 2016. Using this dataset, we will preprocess relevant features such as home and away goals, possession, shots on target, and team strength. These variables will be used to train and compare different machine learning models, including Logistic Regression, Random Forest, and K-Nearest Neighbors, implemented with scikit-learn in Python. Model performance will be evaluated using accuracy, F1-score, and confusion matrices to identify which features most influence match results. Finally, we will visualize patterns in team performance and analyze the predictive importance of various statistics. This project demonstrates how AI can be applied to sports analytics, combining data science and football to gain insights into competitive dynamics and prediction modeling.
+# TrustThePixels: Machine Learning Techniques for Distinguishing AI-Generated Images from Real Photographs
 
-dataset : https://www.kaggle.com/datasets/hugomathien/soccer
+**Members**  
+- Name1, Department, Hanyang University, email@exemple.com  
+- Name2, Department, Hanyang University, email@exemple.com  
+
+---
+
+## Table of Contents
+
+1. [Introduction](#introduction)  
+2. [Datasets](#datasets)  
+3. [Methodology](#methodology)  
+4. [Evaluation & Analysis](#evaluation--analysis)  
+5. [Related Work](#related-work)  
+6. [Conclusion](#conclusion)  
+7. [Video / Audio Link](#video--audio-link)
+
+---
+
+## I. Introduction
+
+### Motivation
+(à remplir maintenant)
+
+### Project Goal
+(à remplir maintenant)
+
+## II. Datasets
+(à remplir : description du dataset + source)
+
+## III. Methodology
+(à remplir : quels algos, quel code, ML pipeline)
+
+## IV. Evaluation & Analysis
+(à remplir : accuracy, confusion matrix, graphs)
+
+## V. Related Work
+(blogs, papers, GitHub repos, libs utilisées)
+
+## VI. Conclusion
+(à remplir à la fin)
+
+## Video / Audio Link
+(To be added later: YouTube link)
