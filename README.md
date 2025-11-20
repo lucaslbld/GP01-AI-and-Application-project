@@ -12,9 +12,9 @@
 ## Table of Contents
 
 1. [Introduction](#Introduction)  
-2. [Datasets](#II.datasets)  
-3. [Methodology](#III.methodology)  
-4. [Evaluation & Analysis](#IV.evaluation--analysis)  
+2. [Datasets](#datasets)  
+3. [Methodology](#methodology)  
+4. [Evaluation & Analysis](#evaluation--analysis)  
 5. [Related Work](#related-work)  
 6. [Conclusion](#conclusion)  
 7. [Video / Audio Link](#video--audio-link)
