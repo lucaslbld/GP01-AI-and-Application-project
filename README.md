@@ -1,8 +1,11 @@
 # TrustThePixels: Machine Learning Techniques for Distinguishing AI-Generated Images from Real Photographs
 
 **Members**  
-- Name1, Department, Hanyang University, email@exemple.com  
-- Name2, Department, Hanyang University, email@exemple.com  
+- Thibault MICHEL, Computer science, Hanyang University, thibault.michel@edu.devinci.fr  
+- Arthur LOURENÇO, Computer science, Hanyang University, arthur.lourenco@edu.ece.fr
+- Jean LECORNET, Computer science, Hanyang University, jean.lecornet@edu.ece.fr
+- Loup FLORENTIN, Computer science, Hanyang University, loup.florentin@edu.ece.fr
+- Lucas LEBLOND, Computer science, Hanyang University, lucas.leblond@edu.ece.fr
 
 ---
 
