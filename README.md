@@ -53,7 +53,7 @@ import os
 import random
 from datasets import load_dataset
 
-def main():
+    def main():
     print("Loading full dataset from Hugging Face...")
     ds = load_dataset("Hemg/AI-Generated-vs-Real-Images-Datasets")
     train = ds["train"]
@@ -106,7 +106,7 @@ def main():
 
     print("DONE. Reduced dataset saved in dataset/AI and dataset/Real.")
 
-if __name__ == "__main__":
+    if __name__ == "__main__":
     main()
 
 ## Methodology
