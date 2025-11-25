@@ -108,7 +108,7 @@ Below is the code used to create this reduced dataset.
 ### Download the Dataset
 
 Our dataset (8000 images)
-[Click here to download reduced_dataset.zip](https://github.com/lucaslbld/GP01-AI-and-Application-project/releases/download/v1.0/dataset.zip)
+[Click here to download the dataset](https://github.com/lucaslbld/GP01-AI-and-Application-project/releases/download/v1.0/dataset.zip)
 
 
 ## Methodology
