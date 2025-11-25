@@ -89,14 +89,12 @@ Below is the code used to create this reduced dataset.
     os.makedirs("dataset/AI", exist_ok=True)
     os.makedirs("dataset/Real", exist_ok=True)
 
-    print("Saving AI images...")
     for i, idx in enumerate(ai_sample):
         img = train[idx]["image"]
         if img.mode != "RGB":
             img = img.convert("RGB")
         img.save(f"dataset/AI/ai_{i:04d}.jpg")
 
-    print("Saving Real images...")
     for i, idx in enumerate(real_sample):
         img = train[idx]["image"]
         if img.mode != "RGB":
