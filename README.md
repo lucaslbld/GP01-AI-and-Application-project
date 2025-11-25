@@ -105,6 +105,12 @@ Below is the code used to create this reduced dataset.
     if __name__ == "__main__":
     main()
 
+### Download the Dataset
+
+Our dataset (8000 images)
+[Click here to download reduced_dataset.zip](https://github.com/tonnom/TrustThePixels/releases/download/v1.0/reduced_dataset.zip)
+
+
 ## Methodology
 
 
