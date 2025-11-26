@@ -36,16 +36,16 @@ The objective of this project is to develop a machine learning model capable of 
 ## Datasets
 During the early stages of the project, we examined several datasets containing AI-generated images and real photographs. However, most available datasets presented two main problems.
 
-First, many of them were extremely large, often containing more than one hundred thousand images. While these datasets are excellent for large-scale research, they are impractical for a student project because they require very long download times, considerable storage space, and significant computing power for preprocessing and training.
+First, many of them were extremely large, often containing hundreds of thousands of images. While these datasets are excellent for large-scale research, they are impractical for a student project because they require long download times, significant storage space, and substantial computing resources for both preprocessing and training.
 
-Second, smaller datasets we found were not suitable for our needs. Many of them lacked diversity, included too few samples, or only focused on a specific type of image, such as human faces. Others had poor labeling quality or did not match the kind of modern AI-generated content we wanted to study.
+Second, the smaller datasets we found were not suitable for our objectives. Many lacked diversity, included too few samples, or were limited to specific image categories such as human faces. Others suffered from poor labeling quality or contained images that did not align with the types of modern AI-generated content we wanted to study. Additionally, several datasets contained images with highly inconsistent resolutions, including extremely small files such as 32×32 or 64×64 pixels, which significantly increases noise during training and reduces the model’s ability to generalize.
 
-Because of these issues, we decided to use a large and diverse dataset from Hugging Face:
-https://huggingface.co/datasets/Hemg/AI-Generated-vs-Real-Images-Datasets
+Due to these limitations, we ultimately decided to use a large and diverse dataset from Hugging Face:
+https://huggingface.co/datasets/theminji/ai-vs-real-200k
 
-This dataset originally contained 152,710 images divided into two classes. The first class contains AI-generated content, identified under the name “AiArtData”. The second class contains real images created or captured by humans, listed under the name “RealArt”. The dataset includes a wide variety of subjects such as landscapes, objects, people, paintings, and synthetic scenes created by generative models. This diversity makes it particularly relevant to our objective, since today’s generative AI is capable of producing almost any type of visual content.
+This dataset originally contains roughly 200,000 images divided into two categories: AI-generated content and real photographs. It covers a broad range of visual styles and subjects, making it highly relevant to our goal of detecting modern generative AI content.
 
-However, using the full dataset was not necessary for our project. To build a more manageable and balanced dataset, we wrote a Python script that automatically loads the full dataset, separates the images according to their labels, randomly selects a subset of 4000 AI-generated images and 4000 real images, converts every image to RGB format, and finally saves them into two folders. The result is a reduced dataset of 8000 images, perfectly balanced and much easier to work with during model training.
+However, using the full dataset was unnecessary for our project. To build a manageable and balanced working set, we wrote a Python script that loads the dataset, identifies the AI and Real labels automatically, randomly selects 5,000 AI-generated images and 5,000 real images, converts all images to RGB format for consistency, and saves them into two dedicated folders. The final result is a curated dataset of 10,000 images, perfectly balanced and much easier to work with for training and evaluation.
 
 Below is the code used to create this reduced dataset.
 
@@ -54,8 +54,8 @@ Below is the code used to create this reduced dataset.
     from datasets import load_dataset
 
     def main():
-    ds = load_dataset("Hemg/AI-Generated-vs-Real-Images-Datasets")
-    train = ds["train"]
+        ds = load_dataset("theminji/ai-vs-real-200k")
+        train = ds["train"]
 
     print(train)
     print("Features:", train.features)
@@ -63,8 +63,18 @@ Below is the code used to create this reduced dataset.
     label_field = "label"
 
     label_names = train.features[label_field].names
-    ai_label = label_names.index("AiArtData")
-    real_label = label_names.index("RealArt")
+    print("Label names:", label_names)
+
+  
+    ai_label = None
+    real_label = None
+
+    for idx, name in enumerate(label_names):
+        lname = name.lower()
+        if "ai" in lname or "fake" in lname or "generated" in lname:
+            ai_label = idx
+        if "real" in lname:
+            real_label = idx
 
     print("AI label:", ai_label, "(", label_names[ai_label], ")")
     print("Real label:", real_label, "(", label_names[real_label], ")")
@@ -83,8 +93,8 @@ Below is the code used to create this reduced dataset.
     print("Total Real images:", len(real_indices))
 
     random.seed(42)
-    ai_sample = random.sample(ai_indices, 4000)
-    real_sample = random.sample(real_indices, 4000)
+    ai_sample = random.sample(ai_indices, 5000)
+    real_sample = random.sample(real_indices, 5000)
 
     os.makedirs("dataset/AI", exist_ok=True)
     os.makedirs("dataset/Real", exist_ok=True)
@@ -101,13 +111,14 @@ Below is the code used to create this reduced dataset.
             img = img.convert("RGB")
         img.save(f"dataset/Real/real_{i:04d}.jpg")
 
-   
+
     if __name__ == "__main__":
     main()
 
+
 ### Download the Dataset
 
-Our dataset (8000 images)
+Our dataset (10000 images)
 [Click here to download the dataset](https://github.com/lucaslbld/GP01-AI-and-Application-project/releases/download/v1.0/dataset.zip)
 
 
