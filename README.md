@@ -140,7 +140,8 @@ This methodology gives us a complete and reproducible workflow for training and 
 
 ## Evaluation & Analysis
 
-![Uploading image.png…]()
+<img width="1483" height="618" alt="ScreenEvalpredict" src="https://github.com/user-attachments/assets/3c86dad5-234d-43d6-bfd0-9a2f4e17c8cb" />
+
 
 
 ## Related Work
