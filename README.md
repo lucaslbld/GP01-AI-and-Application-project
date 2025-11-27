@@ -140,7 +140,27 @@ This methodology gives us a complete and reproducible workflow for training and 
 
 ## Evaluation & Analysis
 
+To evaluate the performance of our model, we tested it on two different types of images: samples taken directly from our dataset and images collected manually from external sources such as the internet. This allows us to understand both how well the model learned the training distribution and how well it generalizes to real-world situations.
+
 <img width="1483" height="618" alt="ScreenEvalpredict" src="https://github.com/user-attachments/assets/3c86dad5-234d-43d6-bfd0-9a2f4e17c8cb" />
+
+When we tested the model on random images taken from the prepared dataset, the results were consistently correct. The model correctly classified AI images as AI and real images as real with very high confidence scores. These results show that the model learned to recognize the patterns present in the dataset, such as textures, colors, lighting styles or compression characteristics that may be typical of AI-generated content or real photographs. These internal tests confirm that the training process, the preprocessing steps and the model architecture were all functioning as expected.
+
+<img width="777" height="588" alt="ScreenEvalpredictperso1" src="https://github.com/user-attachments/assets/d2fc2777-f400-4f15-9ceb-3a7aac445a46" />
+
+<img width="721" height="555" alt="ScreenEvalpredictperso2" src="https://github.com/user-attachments/assets/0f0ee9a3-6ab4-49aa-a350-54fc8e99e3c5" />
+
+However, the results were noticeably different when testing the second prediction script on external images selected by the user. For these images, the model often made incorrect predictions. For example, some highly realistic AI portraits were classified as real, while simple real images such as a dog photograph or a cityscape were sometimes classified as AI. Even a well-known real picture of Will Smith was predicted as AI with high confidence. These examples illustrate a clear limitation in the generalization ability of the model.
+
+This difference can be explained by the fact that the model was trained exclusively on images coming from one dataset. Even though that dataset is large and diverse, it still has its own visual style, distribution and characteristics. The model learns the statistical patterns of this dataset, but images from the internet can have different properties such as higher resolution, different compression methods, different lighting styles, more modern camera sensors, or more recent AI generators that the model has never seen before. As a result, the model performs well inside the training distribution, but struggles when the images come from a different source or follow a different visual pattern.
+
+Looking at the confidence scores also helps to understand the model’s behavior. When predicting on images from the dataset, the model outputs probabilities close to 1.00 for the correct class. But on external images, the model can still output very high confidence for an incorrect class. This means that the model is not simply unsure, but that it is genuinely misled by features that happen to resemble the patterns it learned during training. This is a common issue in machine learning known as the generalization gap.
+
+The images below illustrate this phenomenon. The first examples come from the dataset and are classified perfectly. The next examples are user-selected images where the model often makes wrong predictions despite appearing confident. These results highlight the importance of dataset diversity and show that real-world image classification tasks require much broader training data or more advanced techniques.
+
+In summary, the model performs very well on the dataset it was trained on, but shows limited generalization to external images. This evaluation helps us understand the strengths and weaknesses of our approach, and it demonstrates that even with a powerful model like ResNet34, reliable detection of AI-generated images in the real world remains a challenging task.
+
+
 
 
 
