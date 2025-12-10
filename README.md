@@ -162,6 +162,15 @@ In summary, the model performs very well on the dataset it was trained on but sh
 
 ## Related Work
 
+The task of distinguishing AI-generated images from real photographs is commonly addressed using convolutional neural networks (CNNs) trained on labeled image datasets. Recent approaches generally rely on transfer learning, where models pre-trained on large-scale datasets such as ImageNet are fine-tuned for binary classification tasks (AI vs Real). This strategy takes advantage of robust low-level and mid-level visual features learned from millions of natural images.
+
+Architectures from the ResNet family are frequently used in this context due to their strong performance, stability during training, and availability of well-tested pre-trained weights. In many studies and practical implementations, ResNet variants are adapted by replacing the final classification layer to match the number of target classes, which is the approach adopted in this project.
+
+Existing research also emphasizes the importance of consistent preprocessing. Standard pipelines typically include resizing images to a fixed resolution, converting them to tensors, and normalizing them using ImageNet statistics. These steps help ensure compatibility with pre-trained models and reduce unwanted variations during training. Our preprocessing pipeline follows these established practices exactly.
+
+From an engineering perspective, modern deep learning frameworks such as PyTorch Lightning are often used to structure training loops, handle validation, and manage checkpoints more reliably. This abstraction simplifies experimentation while keeping the underlying PyTorch flexibility. Similarly, the timm library is commonly used to access a wide range of pre-trained vision models through a unified interface.
+
+Finally, several works in the literature report a recurring limitation: although CNN-based detectors can perform very well on images coming from the same dataset used for training, their performance often degrades on out-of-distribution data, such as images from unseen generators or real-world sources. Rather than proposing a novel detection technique, our project follows these established methods and empirically explores their effectiveness and limitations in a controlled but realistic student project setting.
 
 ## Conclusion
 
