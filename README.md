@@ -144,7 +144,7 @@ To evaluate the performance of our model, we tested it on two different types of
 
 When we tested the model on random images taken from the prepared dataset, the results were consistently correct. The model correctly classified AI images as AI and real images as real with very high confidence scores. These results show that the model learned to recognize the patterns present in the dataset, such as textures, colors, lighting styles or compression characteristics that may be typical of AI-generated content or real photographs. These internal tests confirm that the training process, the preprocessing steps and the model architecture were all functioning as expected.
 
-<img width="1483" height="618" alt="ScreenEvalpredict" src="https://github.com/user-attachments/assets/3c86dad5-234d-43d6-bfd0-9a2f4e17c8cb" />
+<img width="960" height="400" alt="ScreenEvalpredict" src="https://github.com/user-attachments/assets/3c86dad5-234d-43d6-bfd0-9a2f4e17c8cb" />
 
 However, the results were noticeably different when testing the second prediction script on external images selected by the user. For these images, the model often made incorrect predictions. Some highly realistic AI portraits were classified as real, while simple real images such as a dog photograph or a cityscape were sometimes classified as AI. Even a well-known real picture of Will Smith was predicted as AI with high confidence. These examples illustrate a clear limitation in the generalization ability of the model.
 
