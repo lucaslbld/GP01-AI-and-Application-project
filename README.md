@@ -190,7 +190,12 @@ Used to visualize prediction results and display images with class probabilities
 
 Official documentation and tutorials
 The official documentation of PyTorch, PyTorch Lightning, and timm was consulted to correctly implement transfer learning and inference pipelines.
+
 ## Conclusion
+
+This project demonstrated that machine learning can effectively distinguish AI-generated images from real photographs when trained on a well-structured and balanced dataset. Using a curated subset of 10,000 images and a fine-tuned ResNet34 model, we achieved strong results on in-distribution data, confirming that our preprocessing pipeline and methodological choices were appropriate.
+However, tests on external images revealed a clear limitation: the model struggles to generalize beyond the dataset it was trained on, often producing confident but incorrect predictions. This reflects a common challenge in AI-generated content detection, where rapid advances in generative models and variations in real-world image sources make robust classification difficult.
+Overall, our work provides a solid foundation for understanding the capabilities and shortcomings of current detection approaches. Improving generalization will require more diverse datasets and more advanced techniques, but this project represents an important step toward building reliable tools for image authenticity verification.
 
 ## Video link
 [video link](https://youtu.be/w92Y42kqqxY) 
