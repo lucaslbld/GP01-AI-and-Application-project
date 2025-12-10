@@ -148,9 +148,9 @@ When we tested the model on random images taken from the prepared dataset, the r
 
 However, the results were noticeably different when testing the second prediction script on external images selected by the user. For these images, the model often made incorrect predictions. Some highly realistic AI portraits were classified as real, while simple real images such as a dog photograph or a cityscape were sometimes classified as AI. Even a well-known real picture of Will Smith was predicted as AI with high confidence. These examples illustrate a clear limitation in the generalization ability of the model.
 
-<img width="500" height="500" alt="ScreenEvalpredictperso1" src="https://github.com/user-attachments/assets/d2fc2777-f400-4f15-9ceb-3a7aac445a46" />
+<img width="350" height="350" alt="ScreenEvalpredictperso1" src="https://github.com/user-attachments/assets/d2fc2777-f400-4f15-9ceb-3a7aac445a46" />
 
-<img width="500" height="500" alt="ScreenEvalpredictperso2" src="https://github.com/user-attachments/assets/0f0ee9a3-6ab4-49aa-a350-54fc8e99e3c5" />
+<img width="350" height="350" alt="ScreenEvalpredictperso2" src="https://github.com/user-attachments/assets/0f0ee9a3-6ab4-49aa-a350-54fc8e99e3c5" />
 
 This difference can be explained by the fact that the model was trained exclusively on images coming from one dataset. Even though the dataset is large and diverse, it still has its own visual style, distribution and characteristics. The model learns the statistical patterns of this dataset, but images from the internet can have different properties such as higher resolution, different compression methods, different lighting styles, more modern camera sensors, or more recent AI generators that the model has never seen before. As a result, the model performs well inside the training distribution but struggles when the images come from a different source or follow a different visual pattern.
 
