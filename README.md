@@ -315,34 +315,29 @@ In summary, the model performs very well on the dataset it was trained on but sh
 
 ## Related Work
 
-The following tools, libraries, and resources were used to design, train, and evaluate the model in this project:
+The following tools, libraries, and resources were used to design, train, and evaluate the model in this project.
 
-PyTorch
-Deep learning framework used to implement the neural network, define the loss function, and manage model parameters.
+PyTorch is the core deep learning framework used to implement the neural network, define the loss function, manage model parameters, and perform both training and inference.
 
-PyTorch Lightning
-High-level framework built on top of PyTorch, used to structure the training and validation loops, manage epochs, and handle logging in a clean and reproducible way.
+PyTorch Lightning is a high-level framework built on top of PyTorch, used to structure the training and validation loops, manage epochs, and ensure clean, modular, and reproducible experimentation.
+ResNet34, accessed through the timm library, is the pretrained convolutional neural network architecture used as the backbone of the classifier. Transfer learning was applied by fine-tuning the final classification layer to adapt the model to the AI-versus-real image classification task.
 
-ResNet34 (via timm)
-Pre-trained convolutional neural network architecture used as the backbone of the classifier. Transfer learning was applied by fine-tuning the final classification layer for the AI vs Real task.
+timm (PyTorch Image Models) provides a standardized and reliable interface to pretrained vision models, allowing consistent initialization and configuration of architectures such as ResNet34.
+Torchvision is used for image preprocessing and dataset handling, including resizing, normalization, and loading images through the ImageFolder interface.
 
-timm (PyTorch Image Models)
-Library providing access to pre-trained vision models, including ResNet34, with standardized initialization and configuration.
+Hugging Face Datasets serves as the source of the original large-scale dataset (ai-vs-real-200k), from which a balanced and curated subset was constructed for training and evaluation.
+The Python Imaging Library (PIL) is used to load images and convert them into RGB format prior to preprocessing and inference.
 
-Torchvision
-Used for image preprocessing and dataset handling, including resizing, normalization, and loading images using ImageFolder.
+Matplotlib is used to visualize prediction results and display images along with their predicted classes and associated confidence scores during evaluation.
+Official documentation and tutorials from PyTorch, PyTorch Lightning, and timm were consulted to correctly implement transfer learning, model fine-tuning, and inference pipelines.
+In addition to these tools, it is important to place this project within the broader context of image authenticity detection and to highlight the evolution of methods used for this task.
 
-Hugging Face Datasets
-Source of the original large-scale dataset (ai-vs-real-200k) used to build a balanced subset for training and evaluation.
+Historically, the detection of manipulated or synthetic images relied primarily on handcrafted features and classical machine learning techniques. Early approaches focused on identifying visual inconsistencies such as unnatural edges, lighting mismatches, color histogram anomalies, or compression artifacts. Frequency-domain analysis techniques, such as Fourier transforms, were commonly used to detect periodic patterns or noise signatures introduced during image generation or manipulation. These handcrafted features were then classified using traditional models such as Support Vector Machines (SVM), Random Forests, or k-Nearest Neighbors. While these methods were effective for detecting early generations of synthetic images, they required expert-designed features and struggled to generalize to more complex or unseen manipulations.
+With the rise of deep learning, modern approaches shifted toward data-driven feature extraction using convolutional neural networks. Instead of manually defining visual cues, CNNs learn discriminative patterns directly from data, making them significantly more robust to variations in image content. Transfer learning with pretrained architectures such as ResNet, EfficientNet, or DenseNet has become a standard practice, allowing models to leverage knowledge learned from large-scale datasets. More recently, Vision Transformers (ViT) and hybrid CNN–Transformer architectures have been introduced, offering improved performance by modeling long-range dependencies and global image context.
 
-Python Imaging Library (PIL)
-Used to load and convert images into RGB format before preprocessing and inference.
+In parallel, specialized forensic methods have emerged to target AI-generated content specifically. These include noise pattern analysis, detection of GAN-specific artifacts, frequency-domain fingerprinting, and analysis of image compression traces. Recent research also explores multimodal approaches that combine spatial features, frequency information, and metadata, as well as CLIP-based models that align visual and semantic representations. These modern techniques reflect the increasing sophistication of generative models and the need for equally advanced detection systems.
 
-Matplotlib
-Used to visualize prediction results and display images with class probabilities during evaluation.
-
-Official documentation and tutorials
-The official documentation of PyTorch, PyTorch Lightning, and timm was consulted to correctly implement transfer learning and inference pipelines.
+This project follows the modern deep learning paradigm by leveraging transfer learning with a pretrained convolutional network, while also illustrating the current limitations of purely data-driven approaches when faced with domain shifts and rapidly evolving generative models.
 
 ## Conclusion
 
